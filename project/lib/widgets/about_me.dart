@@ -1,5 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:portfolio/info.dart';
+import 'package:portfolio/widgets/contact_info.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 class AboutMe extends StatelessWidget {
@@ -58,7 +59,7 @@ class SmallInfo extends StatelessWidget {
           Text(
             "Hi, I am",
             textScaleFactor: 2,
-            style: TextStyle(color: Colors.teal),
+            style: TextStyle(color: Colors.teal[300]),
           ),
           Text(
             "Prerak Mann",
@@ -81,6 +82,7 @@ class SmallInfo extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
+          ContactInfo()
         ],
       ),
     );

@@ -1,30 +1,35 @@
 import 'package:flutter_web/material.dart';
-import 'package:portfolio/widgets/menu_button.dart';
-import 'package:portfolio/widgets/responsive_widget.dart';
+import 'package:portfolio/widgets/custom_buttons.dart';
+import 'dart:html' as html;
 
 class ContactInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var contactButtons = <Widget>[
-      MenuButton(
+      SocialButton(
         text: "Github",
-        onPressed: () {},
+        onPressed: () {
+          html.window.open("https://github.com/mannprerak2/", "Prerak Mann Github");
+        },
       ),
-      MenuButton(
-        text: "Twitter",
-        onPressed: () {},
+      SocialButton(
+        text: "Linked-In",
+        onPressed: () {
+          html.window.open("https://www.linkedin.com/in/prerak-mann-4b0011165/",
+              "Prerak Mann Linked In");
+        },
       ),
-      MenuButton(
+      SocialButton(
         text: "Facebook",
-        onPressed: () {},
+        onPressed: () {
+          html.window
+              .open("https://www.facebook.com/prerak.mann", "Prerak Mann Facebook");
+        },
       ),
     ];
-    return ResponsiveWidget(
-      largeScreen: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: contactButtons,
-      ),
-      smallScreen: Column(children: contactButtons),
+    return Wrap(
+      runAlignment: WrapAlignment.spaceEvenly,
+      children: contactButtons,
     );
   }
 }
