@@ -55,7 +55,7 @@ final projectsModels = <ProjectModel>[
   ProjectModel(
     name: "Jigsaw Camera Puzzle",
     description: "A jigsaw puzzle with live camera image, made with Flutter",
-    image: null,
+    image: "https://github.com/mannprerak2/JigsawCameraPuzzle/raw/master/GIF/gif.gif",
     link: "https://github.com/mannprerak2/JigsawCameraPuzzle",
   ),
   ProjectModel(
