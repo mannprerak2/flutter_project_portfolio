@@ -5,3 +5,7 @@ This is my portfolio website
 
 
 Made with Flutter Web
+
+### Screenshots 
+
+<img src="./screenshots/1.png" width="600"/>
