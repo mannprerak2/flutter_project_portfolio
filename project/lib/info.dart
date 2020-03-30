@@ -6,6 +6,18 @@ final name = "Prerak Mann";
 
 final projectsModels = <ProjectModel>[
   ProjectModel(
+    name: "Anroid Nearby Connections for Flutter",
+    description: "Flutter Plugin for the android Nearby Connections API",
+    image: null,
+    link: "https://github.com/mannprerak2/nearby_connections",
+  ),
+  ProjectModel(
+    name: "Flutter clock",
+    description: "Flutter Clock UI",
+    image: "https://github.com/mannprerak2/mflutter_clock/blob/master/ss/ss.jpg",
+    link: "https://github.com/mannprerak2/mflutter_clock",
+  ),
+  ProjectModel(
     name: "EventHub",
     description: "View events at my college, DTU",
     image:
@@ -25,12 +37,6 @@ final projectsModels = <ProjectModel>[
     image:
         "https://github.com/mannprerak2/JigsawCameraPuzzle/raw/master/GIF/gif.gif",
     link: "https://github.com/mannprerak2/JigsawCameraPuzzle",
-  ),
-  ProjectModel(
-    name: "Anroid Nearby Connections for Flutter",
-    description: "Flutter Plugin for the android Nearby Connections API",
-    image: null,
-    link: "https://github.com/mannprerak2/nearby_connections",
   ),
   ProjectModel(
     name: "pLinkSaver",

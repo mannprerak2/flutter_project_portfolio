@@ -9,7 +9,6 @@ jobs:
     env:
       my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
-    if: github.actor != 'bot'
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v1
@@ -21,11 +20,13 @@ jobs:
           flutter pub get
           flutter build web --release
       - run: |
+          git checkout master
+          a=`git log -1 --pretty=format:'%an'`
+          if [ "$a" = "bot" ]; then echo "Exiting..." && exit; fi
           rm -rf assets flutter_service_worker.js index.html main.dart.js main.dart.js.map
           cp -R project/build/web/* ./
           git config --global user.email bot
           git config --global user.name 'bot'
-          git checkout master
           echo "============"
           git status
           echo "============"
