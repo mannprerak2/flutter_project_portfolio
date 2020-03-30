@@ -1,0 +1,30 @@
+name: Flutter Web Build and gh-pages host
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build Web
+    env:
+      my_secret: ${{secrets.commit_secret}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'beta'
+      - run: flutter config --enable-web
+      - run: flutter pub get
+      - run: flutter build web --release
+      - run: |
+          rm -rf docs
+          cp -R build/web docs
+          git config --global user.email mannprerak2@gmail.com
+          git config --global user.name 'Prerak Mann'
+          git status
+          # change this remote url for examle your remote url is https://github.com/onatcipli/flutter_web.git then the following:
+          git remote add origin https://${{secrets.commit_secret}}@github.com/mannprerak2/mannprerak2.github.io.git
+          git add docs
+          git commit -m "auto gh-action, build web (docs)"
+          git push origin master
