@@ -9,28 +9,31 @@ jobs:
     env:
       my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest
+    if: github.actor != 'bot'
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v1
         with:
           channel: 'beta'
       - run: flutter config --enable-web
-      - run: flutter pub get
-      - run: flutter build web --release
       - run: |
-          rm -rf docs
-          cp -R build/web docs
-          git config --global user.email mannprerak2@gmail.com
-          git config --global user.name 'Prerak Mann'
+          cd project
+          flutter pub get
+          flutter build web --release
+      - run: |
+          rm -rf assets flutter_service_worker.js index.html main.dart.js main.dart.js.map
+          cp -R project/build/web/* ./
+          git config --global user.email bot
+          git config --global user.name 'bot'
           git checkout master
           echo "============"
           git status
           echo "============"
           # change this remote url for examle your remote url is https://github.com/onatcipli/flutter_web.git then the following:
-          git add docs
+          git add --all
           git remote set-url origin https://${{secrets.commit_secret}}@github.com/mannprerak2/mannprerak2.github.io.git
           echo "============"
-          git commit -m "auto gh-action, build web (docs)"
+          git commit -m "auto gh-action, build web"
           echo "============"
           git push origin master
           echo "============"
