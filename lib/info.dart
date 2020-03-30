@@ -7,7 +7,7 @@ final name = "Prerak Mann";
 final projectsModels = <ProjectModel>[
   ProjectModel(
     name: "EventHub",
-    description: "View events at DTU",
+    description: "View events at my college, DTU",
     image:
         "https://github.com/mannprerak2/event_hub_flutter/raw/master/screenshots/1.jpg",
     link: "https://github.com/mannprerak2/event_hub_flutter",
