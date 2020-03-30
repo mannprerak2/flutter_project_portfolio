@@ -13,8 +13,8 @@ final projectsModels = <ProjectModel>[
   ),
   ProjectModel(
     name: "Flutter clock",
-    description: "Flutter Clock UI",
-    image: "https://github.com/mannprerak2/mflutter_clock/blob/master/ss/ss.jpg",
+    description: "My Flutter Clock UI submission",
+    image: "https://github.com/mannprerak2/mflutter_clock/raw/master/ss/ss.jpg",
     link: "https://github.com/mannprerak2/mflutter_clock",
   ),
   ProjectModel(
@@ -30,6 +30,12 @@ final projectsModels = <ProjectModel>[
     image:
         "https://github.com/mannprerak2/ActivityDo/raw/master/screenshots/home-quicknotes.jpg",
     link: "https://github.com/mannprerak2/ActivityDo",
+  ),
+  ProjectModel(
+    name: "PutAway Tab management",
+    description: "A tab management extension for Chrome and Chromium-based browsers Made with SvelteJS",
+    image: null,
+    link: "https://github.com/put-away/putaway",
   ),
   ProjectModel(
     name: "Jigsaw Camera Puzzle",

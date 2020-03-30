@@ -16,13 +16,13 @@ jobs:
           channel: 'beta'
       - run: flutter config --enable-web
       - run: |
-          cd project
-          flutter pub get
-          flutter build web --release
-      - run: |
           git checkout master
           a=`git log -1 --pretty=format:'%an'`
           if [ "$a" = "bot" ]; then echo "Exiting..." && exit; fi
+          cd project
+          flutter pub get
+          flutter build web --release
+          cd ..
           rm -rf assets flutter_service_worker.js index.html main.dart.js main.dart.js.map
           cp -R project/build/web/* ./
           git config --global user.email bot
