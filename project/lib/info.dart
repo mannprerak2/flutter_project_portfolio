@@ -60,11 +60,11 @@ final projectsModels = <ProjectModel>[
     link: "https://github.com/mannprerak2/flowchartmaker",
   ),
   ProjectModel(
-    name: "My Portfolio",
+    name: "Flutter Project Portfolio",
     description: "This Website, made with Flutter Web",
     image:
-        "https://github.com/mannprerak2/mannprerak2.github.io/raw/master/screenshots/1.png",
-    link: "https://github.com/mannprerak2/mannprerak2.github.io",
+        "https://github.com/mannprerak2/flutter_project_portfolio/raw/master/screenshots/1.png",
+    link: "https://github.com/mannprerak2/flutter_project_portfolio",
   ),
   ProjectModel(
     name: "Perspective Run Unity3D",
