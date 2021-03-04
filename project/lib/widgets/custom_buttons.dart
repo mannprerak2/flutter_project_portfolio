@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:universal_html/html.dart' as html;
-
+import 'package:url_launcher/url_launcher.dart' as html;
 
 class MenuButton extends StatelessWidget {
   final text;
   final onPressed;
 
   const MenuButton({
-    Key key,
-    @required this.text,
-    @required this.onPressed,
+    Key? key,
+    required this.text,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -26,9 +25,9 @@ class SocialButton extends StatelessWidget {
   final onPressed;
 
   const SocialButton({
-    Key key,
-    @required this.text,
-    @required this.onPressed,
+    Key? key,
+    required this.text,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -50,9 +49,9 @@ class LinkButton extends StatelessWidget {
   final text;
   final url;
   const LinkButton({
-    Key key,
-    @required this.text,
-    @required this.url,
+    Key? key,
+    required this.text,
+    required this.url,
   }) : super(key: key);
 
   @override
@@ -64,11 +63,10 @@ class LinkButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(text + "  "),
-          Icon(Icons.link),
         ],
       ),
       onPressed: () {
-        html.window.open(url, url);
+        html.launch(url);
       },
     );
   }

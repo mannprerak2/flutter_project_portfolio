@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/custom_buttons.dart';
-import 'package:universal_html/html.dart' as html;
-
+import 'package:url_launcher/url_launcher.dart' as html;
 
 class ContactInfo extends StatelessWidget {
   @override
@@ -10,21 +9,19 @@ class ContactInfo extends StatelessWidget {
       SocialButton(
         text: "Github",
         onPressed: () {
-          html.window.open("https://github.com/mannprerak2/", "Prerak Mann Github");
+          html.launch("https://github.com/mannprerak2/");
         },
       ),
       SocialButton(
         text: "Linked-In",
         onPressed: () {
-          html.window.open("https://www.linkedin.com/in/prerak-mann-4b0011165/",
-              "Prerak Mann Linked In");
+          html.launch("https://www.linkedin.com/in/prerak-mann-4b0011165/");
         },
       ),
       SocialButton(
         text: "Facebook",
         onPressed: () {
-          html.window
-              .open("https://www.facebook.com/prerak.mann", "Prerak Mann Facebook");
+          html.launch("https://www.facebook.com/prerak.mann");
         },
       ),
     ];

@@ -46,7 +46,7 @@ class AboutMe extends StatelessWidget {
 
 class SmallInfo extends StatelessWidget {
   const SmallInfo({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

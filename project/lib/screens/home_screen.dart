@@ -5,7 +5,6 @@ import 'package:portfolio/widgets/custom_buttons.dart';
 import 'package:portfolio/widgets/project_ui.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:universal_html/html.dart' as html;
 
 class HomePage extends StatefulWidget {
   static final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -32,13 +31,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    html.window.onKeyDown.listen((e) {
-      if (e.keyCode == html.KeyCode.DOWN || e.keyCode == html.KeyCode.SPACE) {
-        HomePage.scrollTo(150);
-      } else if (e.keyCode == html.KeyCode.UP) {
-        HomePage.scrollTo(-150);
-      }
-    });
     super.initState();
   }
 
@@ -46,8 +38,8 @@ class _HomePageState extends State<HomePage> {
     MenuButton(
       text: "About Me",
       onPressed: () {
-        if (HomePage.scaffoldKey.currentState.isDrawerOpen) {
-          Navigator.of(HomePage.scaffoldKey.currentContext).pop();
+        if (HomePage.scaffoldKey.currentState!.isDrawerOpen) {
+          Navigator.of(HomePage.scaffoldKey.currentContext!).pop();
         }
         HomePage.scrollTo(0, absolute: true);
       },
@@ -55,15 +47,15 @@ class _HomePageState extends State<HomePage> {
     MenuButton(
       text: "Projects",
       onPressed: () {
-        if (HomePage.scaffoldKey.currentState.isDrawerOpen) {
-          Navigator.of(HomePage.scaffoldKey.currentContext).pop();
+        if (HomePage.scaffoldKey.currentState!.isDrawerOpen) {
+          Navigator.of(HomePage.scaffoldKey.currentContext!).pop();
         }
         //TODO: change this whenever layout is updated in height
         HomePage.scrollTo(
-            ResponsiveWidget.isLargeScreen(HomePage.scaffoldKey.currentContext)
+            ResponsiveWidget.isLargeScreen(HomePage.scaffoldKey.currentContext!)
                 ? 350
                 : ResponsiveWidget.isMediumScreen(
-                        HomePage.scaffoldKey.currentContext)
+                        HomePage.scaffoldKey.currentContext!)
                     ? 310
                     : 630,
             absolute: true);
@@ -75,7 +67,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     int count = ResponsiveWidget.isLargeScreen(context)
         ? 3
-        : ResponsiveWidget.isSmallScreen(context) ? 1 : 2;
+        : ResponsiveWidget.isSmallScreen(context)
+            ? 1
+            : 2;
     return Scaffold(
       key: HomePage.scaffoldKey,
       drawer: ResponsiveWidget.isSmallScreen(context)

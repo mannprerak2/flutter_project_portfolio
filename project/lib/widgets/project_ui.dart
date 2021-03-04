@@ -5,7 +5,7 @@ import 'package:portfolio/widgets/custom_buttons.dart';
 class ProjectUi extends StatelessWidget {
   final ProjectModel model;
 
-  const ProjectUi(this.model, {Key key}) : super(key: key);
+  const ProjectUi(this.model, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -18,7 +18,7 @@ class ProjectUi extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              model.name,
+              model.name!,
               textScaleFactor: 2,
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white),
@@ -26,7 +26,7 @@ class ProjectUi extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Text(
-                model.description,
+                model.description!,
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white70),
               ),
@@ -47,7 +47,7 @@ class ProjectUi extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.network(
-                          model.image,
+                          model.image!,
                           fit: BoxFit.cover,
                         ),
                       ),

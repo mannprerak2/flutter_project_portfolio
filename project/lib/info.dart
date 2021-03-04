@@ -104,7 +104,7 @@ final projectsModels = <ProjectModel>[
 ];
 
 class ProjectModel {
-  final String name, description, image, link;
+  final String? name, description, image, link;
 
   ProjectModel({this.name, this.description, this.image, this.link});
 }
